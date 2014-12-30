@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="debug">
+        <df name="bin">
+        </df>
+        <df name="obj">
+          <df name="inputTools">
+            <df name="inputFile">
+            </df>
+          </df>
+          <df name="testTools">
+          </df>
+        </df>
+      </df>
+      <df name="release">
+        <df name="bin">
+        </df>
+        <df name="obj">
+          <df name="inputTools">
+            <df name="inputFile">
+            </df>
+          </df>
+          <df name="testTools">
+          </df>
+        </df>
+      </df>
+      <df name="src">
+        <df name="inputTools">
+          <df name="inputFile">
+            <df name="json">
+              <in>json-forwards.h</in>
+              <in>json.h</in>
+            </df>
+            <in>City.cpp</in>
+            <in>City.h</in>
+            <in>CityBuilder.cpp</in>
+            <in>CityBuilder.h</in>
+            <in>Depot.cpp</in>
+            <in>Depot.h</in>
+            <in>DepotBuilder.cpp</in>
+            <in>DepotBuilder.h</in>
+            <in>InputFile.cpp</in>
+            <in>InputFile.h</in>
+            <in>JsonInputParser.cpp</in>
+            <in>JsonInputParser.h</in>
+            <in>Point.cpp</in>
+            <in>Point.h</in>
+            <in>jsoncpp.cpp</in>
+          </df>
+          <in>ArgParser.cpp</in>
+          <in>ArgParser.h</in>
+          <in>FileDirChecker.cpp</in>
+          <in>FileDirChecker.h</in>
+          <in>InputData.cpp</in>
+          <in>InputData.h</in>
+          <in>InputManager.cpp</in>
+          <in>InputManager.h</in>
+        </df>
+        <df name="optionparser">
+          <in>optionparser.h</in>
+          <in>printUsage.h</in>
+        </df>
+        <df name="testTools">
+          <in>DebugState.cpp</in>
+          <in>DebugState.h</in>
+          <in>VRPStats.cpp</in>
+          <in>VRPStats.h</in>
+        </df>
+        <in>CVRPSolver.cpp</in>
+        <in>CVRPSolver.h</in>
+        <in>Cycle.cpp</in>
+        <in>Cycle.h</in>
+        <in>CycleConnector.cpp</in>
+        <in>CycleConnector.h</in>
+        <in>CycleCreator.cpp</in>
+        <in>CycleCreator.h</in>
+        <in>DefaultConditions.cpp</in>
+        <in>DefaultConditions.h</in>
+        <in>Group.cpp</in>
+        <in>Group.h</in>
+        <in>GroupCreator.cpp</in>
+        <in>GroupCreator.h</in>
+        <in>GroupManager.cpp</in>
+        <in>GroupManager.h</in>
+        <in>OutputManager.cpp</in>
+        <in>OutputManager.h</in>
+        <in>Permutation.cpp</in>
+        <in>Permutation.h</in>
+        <in>PermutationGenerator.cpp</in>
+        <in>PermutationGenerator.h</in>
+        <in>ProblemSolver.cpp</in>
+        <in>ProblemSolver.h</in>
+        <in>base.h</in>
+        <in>main.cpp</in>
+      </df>
+      <df name="tempWorkspace">
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+            <option name="debug_command"
+                    value="VRPCore.exe -pD:/VehicleRoutingPlanner/master/Tools/Tests/testcases/json/20cities.json -wD:/VehicleRoutingPlanner/master/Tools/Tests/testcases/json/"/>
+            <option name="debug_dir" value="D:\VehicleRoutingPlanner\master\VRPCore\bin"/>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="release" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir></rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="debug" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir></rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

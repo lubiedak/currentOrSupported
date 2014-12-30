@@ -1,0 +1,1 @@
+Solution works on Windows 7, MVS 2012, .NET 4.5

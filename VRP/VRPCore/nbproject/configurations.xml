@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="src">
+        <df name="inputTools">
+          <df name="inputFile">
+            <df name="json">
+              <in>json-forwards.h</in>
+              <in>json.h</in>
+            </df>
+            <in>City.cpp</in>
+            <in>City.h</in>
+            <in>CityBuilder.cpp</in>
+            <in>CityBuilder.h</in>
+            <in>Depot.cpp</in>
+            <in>Depot.h</in>
+            <in>DepotBuilder.cpp</in>
+            <in>DepotBuilder.h</in>
+            <in>InputFile.cpp</in>
+            <in>InputFile.h</in>
+            <in>JsonInputParser.cpp</in>
+            <in>JsonInputParser.h</in>
+            <in>Point.cpp</in>
+            <in>Point.h</in>
+            <in>jsoncpp.cpp</in>
+          </df>
+          <in>ArgParser.cpp</in>
+          <in>ArgParser.h</in>
+          <in>FileDirChecker.cpp</in>
+          <in>FileDirChecker.h</in>
+          <in>InputData.cpp</in>
+          <in>InputData.h</in>
+          <in>InputManager.cpp</in>
+          <in>InputManager.h</in>
+        </df>
+        <df name="optionparser">
+          <in>optionparser.h</in>
+          <in>printUsage.h</in>
+        </df>
+        <df name="testTools">
+          <in>DebugState.cpp</in>
+          <in>DebugState.h</in>
+          <in>VRPStats.cpp</in>
+          <in>VRPStats.h</in>
+        </df>
+        <in>CVRPSolver.cpp</in>
+        <in>CVRPSolver.h</in>
+        <in>Cycle.cpp</in>
+        <in>Cycle.h</in>
+        <in>CycleConnector.cpp</in>
+        <in>CycleConnector.h</in>
+        <in>CycleCreator.cpp</in>
+        <in>CycleCreator.h</in>
+        <in>DefaultConditions.cpp</in>
+        <in>DefaultConditions.h</in>
+        <in>Group.cpp</in>
+        <in>Group.h</in>
+        <in>GroupCreator.cpp</in>
+        <in>GroupCreator.h</in>
+        <in>GroupManager.cpp</in>
+        <in>GroupManager.h</in>
+        <in>OutputManager.cpp</in>
+        <in>OutputManager.h</in>
+        <in>Permutation.cpp</in>
+        <in>Permutation.h</in>
+        <in>PermutationGenerator.cpp</in>
+        <in>PermutationGenerator.h</in>
+        <in>ProblemSolver.cpp</in>
+        <in>ProblemSolver.h</in>
+        <in>base.h</in>
+        <in>main.cpp</in>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath>bin\VRPCore.exe</executablePath>
+        </makeTool>
+      </makefileType>
+      <folder path="0/src/inputTools">
+        <ccTool>
+          <incDir>
+            <pElem>src/inputTools</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <folder path="0/src/testTools">
+        <ccTool>
+          <incDir>
+            <pElem>src/testTools</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="src/CVRPSolver.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/Cycle.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/CycleConnector.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/CycleCreator.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/DefaultConditions.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/Group.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/GroupCreator.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/GroupManager.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/OutputManager.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/Permutation.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/PermutationGenerator.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/ProblemSolver.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/inputTools/ArgParser.cpp" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="src/inputTools/FileDirChecker.cpp" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="src/inputTools/InputData.cpp" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="src/inputTools/InputManager.cpp" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>src</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="src/testTools/DebugState.cpp" ex="false" tool="1" flavor2="4">
+      </item>
+      <item path="src/testTools/VRPStats.cpp" ex="false" tool="1" flavor2="4">
+      </item>
+    </conf>
+    <conf name="release" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>release/</buildCommandWorkingDir>
+          <buildCommand>${MAKE}</buildCommand>
+          <cleanCommand>${MAKE} clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="src/CVRPSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CVRPSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Cycle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Cycle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CycleConnector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CycleConnector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CycleCreator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CycleCreator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/DefaultConditions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DefaultConditions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Group.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Group.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GroupCreator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GroupCreator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GroupManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GroupManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/OutputManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/OutputManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Permutation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Permutation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PermutationGenerator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PermutationGenerator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ProblemSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ProblemSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/ArgParser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/ArgParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/FileDirChecker.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/FileDirChecker.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/InputData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/InputData.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/InputManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/InputManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/City.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/City.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/CityBuilder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/CityBuilder.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/Depot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/Depot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/DepotBuilder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/DepotBuilder.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/InputFile.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/InputFile.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/JsonInputParser.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/JsonInputParser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/Point.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/Point.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/json/json-forwards.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/json/json.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/jsoncpp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/optionparser/optionparser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/optionparser/printUsage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/testTools/DebugState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/testTools/DebugState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/testTools/VRPStats.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/testTools/VRPStats.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="debug" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>debug/</buildCommandWorkingDir>
+          <buildCommand>${MAKE}</buildCommand>
+          <cleanCommand>${MAKE} clean</cleanCommand>
+          <executablePath></executablePath>
+        </makeTool>
+      </makefileType>
+      <item path="src/CVRPSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CVRPSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Cycle.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Cycle.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CycleConnector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CycleConnector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/CycleCreator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/CycleCreator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/DefaultConditions.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/DefaultConditions.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Group.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Group.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GroupCreator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GroupCreator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/GroupManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/GroupManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/OutputManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/OutputManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/Permutation.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/Permutation.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/PermutationGenerator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/PermutationGenerator.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/ProblemSolver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/ProblemSolver.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/base.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/ArgParser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/ArgParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/FileDirChecker.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/FileDirChecker.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/InputData.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/InputData.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/InputManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/InputManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/City.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/City.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/CityBuilder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/CityBuilder.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/Depot.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/Depot.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/DepotBuilder.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/DepotBuilder.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/InputFile.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/InputFile.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/JsonInputParser.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/JsonInputParser.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/Point.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/Point.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/json/json-forwards.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/json/json.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="src/inputTools/inputFile/jsoncpp.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="src/main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/optionparser/optionparser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/optionparser/printUsage.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/testTools/DebugState.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/testTools/DebugState.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/testTools/VRPStats.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/testTools/VRPStats.h" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
