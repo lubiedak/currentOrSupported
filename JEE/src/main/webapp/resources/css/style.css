@@ -1,0 +1,15 @@
+.tight { width:1%; white-space:nowrap; }
+
+#container { width:1000px; margin:0 auto; }
+
+#left { width:600px; float:left; }
+
+#alternativeResults .selected { font-weight:bold; }
+
+#googleMap { height:400px; clear:both; }
+
+.right { width:380px; float:right; border:1px solid #ddd; }
+
+#bottom { clear:both; margin-top:20px; border:1px solid #ddd; }
+
+#commandStart { float:right; }

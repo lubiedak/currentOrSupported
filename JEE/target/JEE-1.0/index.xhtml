@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>VRP</title>
+
+		<meta charset="utf-8"/>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"/>
+		<h:outputStylesheet library="css" name="style.css"/>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<h:outputScript library="js" name="googleMap.js" target="body" />
+    </h:head>
+    <h:body>
+		<div id="container">
+			<h1>VRP</h1>
+
+			<div id="left">
+				<form id="addressSearch" action="#">
+					<div class="input-group">
+						<input type="text" placeholder="Wpisz adres..." class="form-control" />
+						<span class="input-group-btn">
+							<input type="submit" class="btn btn-default" value="Szukaj" />
+						</span>
+					</div>
+				</form><br />
+
+				<div id="googleMap"></div>
+			</div>
+
+			<div class="right">
+				<h2>Edycja miasta</h2>
+
+				<h:form id="cityEdit" class="form-horizontal">
+                    <h:inputHidden id="cityLat" value="#{citiesManager.city.coordinate.latitude}" />
+                    <h:inputHidden id="cityLong" value="#{citiesManager.city.coordinate.longitude}" />
+                    
+					<div class="form-group">
+						<div class="col-sm-12">
+							<h:inputText id="cityName" value="#{citiesManager.city.name}" p:placeholder="Nazwa miasta" class="col-sm-10 form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<h:outputLabel for="cityDemand" class="col-sm-5 control-label">Zapotrzebowanie:</h:outputLabel>
+						<div class="col-sm-4">
+							<h:inputText p:type="number" id="cityDemand" value="#{citiesManager.city.demand}" class="form-control" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-5 col-sm-8">
+							<div class="checkbox">
+								<h:outputLabel>
+									<h:selectBooleanCheckbox value="#{citiesManager.city.isFirst}" />
+									Pierwsze
+								</h:outputLabel>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-5 col-sm-8">
+							<div class="checkbox">
+								<h:outputLabel>
+									<h:selectBooleanCheckbox value="#{citiesManager.city.isLast}" />
+									Ostatnie
+								</h:outputLabel>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-5 col-sm-8">
+							<div class="checkbox">
+								<h:outputLabel>
+									<h:selectBooleanCheckbox value="#{citiesManager.city.isStop}" />
+									Stop
+								</h:outputLabel>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-5">
+							<h:commandButton class="btn btn-default btn-block" value="Usuń" action="#{citiesManager.remove}">
+								<f:ajax execute="@form" render="citiesList" />
+							</h:commandButton>
+						</div>
+						<div class="col-sm-7">
+							<h:commandButton class="btn btn-primary btn-block" value="Dodaj/zapisz" action="#{citiesManager.add}">
+								<f:ajax execute="@form" render="citiesList" />
+							</h:commandButton>
+						</div>
+					</div>
+
+				</h:form>
+			</div>
+
+			<div class="right">
+				<h2>Alternatywne wyniki wyszukiwania</h2>
+				<ul id="alternativeResults"></ul>
+			</div>
+
+			<div id="bottom">
+				<h:dataTable id="citiesList" value="#{citiesManager.cities}" var="city" class="table table-hover" columnClasses=",tight,tight,tight,tight">
+					<h:column>
+						<f:facet name="header">Nazwa</f:facet>
+						<h:outputText value="#{city.name}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Zapotrzebowanie</f:facet>
+						<h:outputText value="#{city.demand}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Pierwsze</f:facet>
+						<h:outputText class="glyphicon glyphicon-ok" rendered="#{city.isFirst}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Ostatnie</f:facet>
+						<h:outputText class="glyphicon glyphicon-ok" rendered="#{city.isLast}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Stop</f:facet>
+						<h:outputText class="glyphicon glyphicon-ok" rendered="#{city.isStop}" />
+					</h:column>
+				</h:dataTable>
+				<br /><br />
+
+				<h:form>
+					<h:commandButton
+						id="commandStart"
+						action="#{citiesManager.startAlgorithm}"
+						value="Start fancy algorithm!"
+						class="btn btn-primary"/>
+				</h:form>
+			</div>
+		</div>
+    </h:body>
+</html>
