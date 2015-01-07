@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A647D52-4454-4D19-8CB7-DEA92A4D3C7F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AI4PowerGrid_gui</RootNamespace>
+    <AssemblyName>AI4PowerGrid_gui</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AI4PowerGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AI4PowerGrid.Designer.cs">
+      <DependentUpon>AI4PowerGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Auction.cs" />
+    <Compile Include="AuctionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuctionWindow.Designer.cs">
+      <DependentUpon>AuctionWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Board.cs" />
+    <Compile Include="City_gui.cs" />
+    <Compile Include="Connection_gui.cs" />
+    <Compile Include="DefaultValues.cs" />
+    <Compile Include="CsvDataProvider.cs" />
+    <Compile Include="GameFlow.cs" />
+    <Compile Include="GameUI.cs" />
+    <Compile Include="NewGameWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewGameWindow.Designer.cs">
+      <DependentUpon>NewGameWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayersTrack.cs" />
+    <Compile Include="PowerPlantMarket.cs" />
+    <Compile Include="PowerPlant_gui.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemovingPP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RemovingPP.Designer.cs">
+      <DependentUpon>RemovingPP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceBuying.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceBuying.Designer.cs">
+      <DependentUpon>ResourceBuying.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResourceManagement.Designer.cs">
+      <DependentUpon>ResourceManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResourcesMarket.cs" />
+    <Compile Include="Resource_gui.cs" />
+    <Compile Include="SellingElectricity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellingElectricity.Designer.cs">
+      <DependentUpon>SellingElectricity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimulationLogger.cs" />
+    <Compile Include="SimulationMode.cs" />
+    <EmbeddedResource Include="AI4PowerGrid.resx">
+      <DependentUpon>AI4PowerGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuctionWindow.resx">
+      <DependentUpon>AuctionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewGameWindow.resx">
+      <DependentUpon>NewGameWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="RemovingPP.resx">
+      <DependentUpon>RemovingPP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceBuying.resx">
+      <DependentUpon>ResourceBuying.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceManagement.resx">
+      <DependentUpon>ResourceManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellingElectricity.resx">
+      <DependentUpon>SellingElectricity.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Aukcja.cd" />
+    <None Include="GameModel.cd" />
+    <None Include="Interface.cd" />
+    <None Include="Plansza.cd" />
+    <None Include="Players.cd" />
+    <None Include="Markets.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

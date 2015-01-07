@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="AI4PowerGrid_gui.PowerPlantMarket">
+    <Position X="6.75" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AQAIABAgSAAAADAgQgAgBSAQgAAQQBNEAAAAAECCsAA=</HashCode>
+      <FileName>PowerPlantMarket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI4PowerGrid_gui.PowerPlant_gui">
+    <Position X="3" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AgIIAEgOEGgAAIAEAAEGgAcCMAAAgIAAgABviBQAAAA=</HashCode>
+      <FileName>PowerPlant_gui.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI4PowerGrid_gui.PowerPlant">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAwAAAAIAAAAAABAAAAAAAAAAEAAQAAACA=</HashCode>
+      <FileName>PowerPlant_gui.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI4PowerGrid_gui.PP">
+    <Position X="0.5" Y="3.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="AI4PowerGrid_gui.PP.PPtype">
+        <TypeIdentifier>
+          <NewMemberFileName>PowerPlant_gui.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAEAAAAEAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>PowerPlant_gui.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI4PowerGrid_gui.ResourcesMarket">
+    <Position X="5.75" Y="9.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>BgAQAAAAAIAAQIAjASAAAQAAAgIAggIIEgQDAAQAAhI=</HashCode>
+      <FileName>ResourcesMarket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI4PowerGrid_gui.Resource_gui">
+    <Position X="3" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAACAAAAABEAAARAAAIBAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Resource_gui.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AI4PowerGrid_gui.R">
+    <Position X="3.25" Y="13.25" Width="2" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="AI4PowerGrid_gui.R.ResType">
+        <TypeIdentifier>
+          <NewMemberFileName>Resource_gui.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Resource_gui.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
