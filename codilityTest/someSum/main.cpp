@@ -61,9 +61,29 @@ long solutionBF(std::vector<int> &A)
     return biggest;
 };
 
+void sorterFun(void)
+{
+    int x[10];
+    for(int i = 0; i<10; i++)
+    {
+        x[i] = i%4;
+        std::cout<<x[i];
+    }
+    std::sort(x, x+10);
+    std::cout<<std::endl;
+    for(int i = 0; i<10; i++)
+    {
+     //   x[i] = i%4;
+        std::cout<<x[i];
+    }
+    std::cout<<std::endl;
+}
 
 int main()
 {
+    
+    sorterFun();
+    
     std::vector<std::vector<int>> test {{1, -3, 3}, // p=q=2, val =6
                                         {-4, 6, 9, -3, 6, 8}}; // p=1, q=??
     std::vector<int> vals = {6,2};
