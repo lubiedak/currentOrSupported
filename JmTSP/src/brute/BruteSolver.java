@@ -19,8 +19,7 @@ implements Solver{
     }
     
     /**
-     * LoadProblem informs loads problem and inform if solving
- will be possible
+     * LoadProblem informs loads problem and inform if solving will be possible
      */
     public boolean LoadProblem(Problem problem)
     {
