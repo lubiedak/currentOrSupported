@@ -4,19 +4,14 @@ package jmtsp;
  *
  * @author lbiedak
  */
-public class Point {
-    int x;
-    int y;
-    int demand;
+public class Point<T> {
+    T x;
+    T y;
+    T demand;
     
-    public Point()
-    {
-        x = 0;
-        y = 0;
-        demand = 0;
+    public Point() {
     }
-    public Point(int x, int y, int demand)
-    {
+    public Point(T x, T y, T demand) {
         this.x = x;
         this.y = y;
         this.demand = demand;
