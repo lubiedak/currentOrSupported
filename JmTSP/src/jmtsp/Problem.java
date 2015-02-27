@@ -8,6 +8,7 @@ public class Problem {
     
     Point depot;
     ArrayList<Point> points;
+    Number[][] distances;
     ProblemRestrictions restrictions;
     public int size;
     
@@ -15,6 +16,7 @@ public class Problem {
     {
         depot = new Point();
         points = new ArrayList<Point>();
+        distances = new Number[1][];
         restrictions = new ProblemRestrictions();
         size = 0;
     }
