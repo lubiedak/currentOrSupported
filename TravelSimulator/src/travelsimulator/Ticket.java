@@ -10,16 +10,29 @@ package travelsimulator;
  * @author lbiedak
  */
 public class Ticket {
-    String start;
-    String stop;
+    Destination start;
+    Destination stop;
     int distance;
     double ticketCost;
     
-    public Ticket(String start, String Stop, int distance){
+    public Ticket(Destination start, Destination Stop){
         this.start = start;
         this.stop = stop;
-        this.distance = distance;
+        distance = start.GetPosition() - stop.GetPosition();
         ticketCost = 3 + //base
                      1.25 * distance / 10; //distance fare;
     }
+    
+    public int StartPosition(){
+        return start.GetPosition();
+    }
+    
+    public int StopPosition(){
+        return stop.GetPosition();
+    }
+    
+    public double GetCost() {
+        return ticketCost;
+    }
+    
 }

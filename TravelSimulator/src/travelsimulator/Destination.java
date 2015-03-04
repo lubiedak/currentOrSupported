@@ -10,13 +10,19 @@ package travelsimulator;
  * @author lbiedak
  */
 public class Destination {
-    String name;
+    public String name;
     int startPopularity;
     int stopPopularity;
+    int positionOnLine;
     
-    public Destination(String name, int start, int stop) {
+    public Destination(String name, int start, int stop, int position) {
         this.name = name;
         startPopularity = start;
         stopPopularity = stop;
+        positionOnLine = position;
+    }
+    
+    public int GetPosition(){
+        return positionOnLine;
     }
 }
