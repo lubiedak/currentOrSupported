@@ -7,18 +7,20 @@ import java.util.ArrayList;
 public class Problem {
     
     Point depot;
+    public int size;
     ArrayList<Point> points;
     Number[][] distances;
     ProblemRestrictions restrictions;
-    public int size;
+    
     
     public Problem()
     {
         depot = new Point();
+        size = 0;
         points = new ArrayList<Point>();
         distances = new Number[1][];
         restrictions = new ProblemRestrictions();
-        size = 0;
+        
     }
     
     public Problem(ProblemRestrictions restrictions)

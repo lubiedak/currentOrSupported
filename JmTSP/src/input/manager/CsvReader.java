@@ -74,6 +74,16 @@ extends DataReader {
         return GetValue(key, n).intValue();
     }
     
+    public int GetDataSize() {
+        return data.length;
+    }
+    
+    public Number[][] GetData() {
+        if(dataLoaded)
+            return data;
+        return null;
+    }
+    
     private ArrayList<String> ReadFileContent() {
         ArrayList<String> content = new ArrayList<String>();
         File file = new File(fileName);

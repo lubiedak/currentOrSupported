@@ -15,26 +15,42 @@ implements ProblemCreator {
     String restrictionsFileName;
     String distanceFileName;
     
+    Problem problem;
+    
     public ProblemCSV(String problemFileName, String restrictionsFileName, String distanceFileName)
     {
         this.problemFileName      = problemFileName;
         this.restrictionsFileName = restrictionsFileName;
         this.distanceFileName     = distanceFileName;
+        problem = new Problem();
     }
     
     public Problem CreateProblem()
     {
-        
+        ProblemRestrictions restrictions = GetProblemRestrictions();
         
         
         return new Problem();
     }
     
-    private Problem GetProblem()
-    {
+    private Problem GetProblem() {
         CsvReader problemReader = new CsvReader(problemFileName, false);
         
         return new Problem();
+    }
+    
+    private Number[][] GetDistance(Problem problem) {
+        Number[][] distances = new Number[1][];
+        CsvReader distanceReader = new CsvReader(distanceFileName, false);
+        
+        if(distanceReader.FileExists()) {
+            distanceReader.ReadData();
+            distances = distanceReader.GetData();
+        } else {
+            
+        }
+        
+        return distances;
     }
     
     private ProblemRestrictions GetProblemRestrictions()
