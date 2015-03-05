@@ -10,28 +10,35 @@ import java.util.Map;
  */
 public class TravelSimulator {
 
-    public ArrayList<Destination> BydZloLine;
+    public static ArrayList<Destination> BydZloLine;
     
-    public int MAX_PASSENGERS = 16;
-    public Double density = 0.5;
+    public static int MAX_PASSENGERS = 16;
+    public static Double density = 0.5;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        InitBydZlo();
+        
+        TravelGenerator tg = new TravelGenerator(BydZloLine, density);
+        for(int i = 0; i < 16; ++i){
+            Travel t = tg.Generate(64, MAX_PASSENGERS);
+            System.out.print(t);
+        }
     }
     
-    private void InitBydZlo() {
+    private static void InitBydZlo() {
         BydZloLine = new ArrayList<Destination>();
         
-        BydZloLine.add(new Destination("Złotów", 5, 5, 0));
-        BydZloLine.add(new Destination("Zakrzewo", 2, 2, 30));
-        BydZloLine.add(new Destination("Kujan",1,1, 40));
-        BydZloLine.add(new Destination("Sypniewo",2,2, 60));
-        BydZloLine.add(new Destination("Więcbork",4,4, 70));
-        BydZloLine.add(new Destination("Mrocza",2,2, 80));
-        BydZloLine.add(new Destination("Nakło",5,5, 90));
-        BydZloLine.add(new Destination("Bydgoszcz",8,8, 100));
+        BydZloLine.add(new Destination("1Złotów", 5, 5, 0));
+        BydZloLine.add(new Destination("2Zakrzewo", 2, 2, 10));
+        BydZloLine.add(new Destination("3Kujan",1,1, 20));
+        BydZloLine.add(new Destination("4Sypniewo",2,2, 30));
+        BydZloLine.add(new Destination("5Więcbork",4,4, 40));
+        BydZloLine.add(new Destination("6Mrocza",2,2, 60));
+        BydZloLine.add(new Destination("7Nakło",5,5, 70));
+        BydZloLine.add(new Destination("Bydgoszcz",1,8, 100));
     }
     
 }

@@ -25,4 +25,8 @@ public class Destination {
     public int GetPosition(){
         return positionOnLine;
     }
+    
+    public int GetStartPopularity(){
+        return startPopularity;
+    }
 }

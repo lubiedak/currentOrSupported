@@ -6,6 +6,7 @@
 package travelsimulator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -43,7 +44,7 @@ public class Travel {
             sum+=p;
         }
         
-        return sum/maxPassengers;
+        return sum/maxPassengers/passengers.length;
     }
     
     public void AddTicket(Ticket ticket){
@@ -51,6 +52,7 @@ public class Travel {
             tickets.add(ticket);
             UpdatePassengers(ticket);
             UpdateProfit();
+            Collections.sort(tickets);
         }
     }
     
@@ -71,7 +73,7 @@ public class Travel {
     private void UpdatePassengers(Ticket ticket){
         int i = 0;
         for(Destination d : destinations){
-            if(d.GetPosition() >= ticket.StartPosition() && d.GetPosition() <= ticket.StopPosition()){
+            if(d.GetPosition() >= ticket.StartPosition() && d.GetPosition() < ticket.StopPosition()){
                 passengers[i]++;
             }
             i++;
@@ -83,5 +85,16 @@ public class Travel {
         for(Ticket t : tickets) {
             profit += t.GetCost();
         }
+    }
+    
+    public String toString(){
+        
+        String s = new String();
+        for (Ticket t: tickets){
+            s += t.toString() + "\n";
+        }
+        s+="\n";
+        //s+="Ilosc ticketow: " + tickets.size() + " Koszt: " + cost + " Profit: " + profit + "\n";
+        return s;
     }
 }

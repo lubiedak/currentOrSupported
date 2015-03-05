@@ -9,16 +9,16 @@ package travelsimulator;
  *
  * @author lbiedak
  */
-public class Ticket {
+public class Ticket implements Comparable<Ticket>{
     Destination start;
     Destination stop;
     int distance;
     double ticketCost;
     
-    public Ticket(Destination start, Destination Stop){
+    public Ticket(Destination start, Destination stop){
         this.start = start;
         this.stop = stop;
-        distance = start.GetPosition() - stop.GetPosition();
+        distance = stop.GetPosition() - start.GetPosition();
         ticketCost = 3 + //base
                      1.25 * distance / 10; //distance fare;
     }
@@ -35,4 +35,11 @@ public class Ticket {
         return ticketCost;
     }
     
+    public String toString(){
+        return start.name + ";" + stop.name +";"+ ticketCost;
+    }
+    @Override
+    public int compareTo(Ticket anotherTicket) {
+        return toString().compareTo(anotherTicket.toString());
+    }
 }
