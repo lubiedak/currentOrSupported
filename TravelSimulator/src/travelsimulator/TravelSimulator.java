@@ -22,7 +22,7 @@ public class TravelSimulator {
         InitBydZlo();
         
         TravelGenerator tg = new TravelGenerator(BydZloLine, density);
-        for(int i = 0; i < 16; ++i){
+        for(int i = 0; i < 1; ++i){
             Travel t = tg.Generate(64, MAX_PASSENGERS);
             System.out.print(t);
         }
@@ -31,14 +31,14 @@ public class TravelSimulator {
     private static void InitBydZlo() {
         BydZloLine = new ArrayList<Destination>();
         
-        BydZloLine.add(new Destination("1Złotów", 5, 5, 0));
+        BydZloLine.add(new Destination("1Złotów  ", 10, 5, 0));
         BydZloLine.add(new Destination("2Zakrzewo", 2, 2, 10));
-        BydZloLine.add(new Destination("3Kujan",1,1, 20));
+        BydZloLine.add(new Destination("3Kujan   ",1,1, 20));
         BydZloLine.add(new Destination("4Sypniewo",2,2, 30));
         BydZloLine.add(new Destination("5Więcbork",4,4, 40));
-        BydZloLine.add(new Destination("6Mrocza",2,2, 60));
-        BydZloLine.add(new Destination("7Nakło",5,5, 70));
-        BydZloLine.add(new Destination("Bydgoszcz",1,8, 100));
+        BydZloLine.add(new Destination("6Mrocza  ",2,2, 60));
+        BydZloLine.add(new Destination("7Nakło   ",1,5, 70));
+        BydZloLine.add(new Destination("Bydgoszcz",6,8, 100));
     }
     
 }

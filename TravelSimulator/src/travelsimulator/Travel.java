@@ -94,7 +94,7 @@ public class Travel {
             s += t.toString() + "\n";
         }
         s+="\n";
-        //s+="Ilosc ticketow: " + tickets.size() + " Koszt: " + cost + " Profit: " + profit + "\n";
+        s+="Ilosc ticketow: " + tickets.size() + " Koszt: " + cost + " Profit: " + profit + "\n";
         return s;
     }
 }
