@@ -21,13 +21,14 @@ extends DataReader {
     Map<String, Integer> header;
     int[][] data;
     boolean firstColumnIsHeader; 
+    boolean noHeader;
     String delimiter;
     
     boolean dataLoaded;
     
-    public CsvReader(String fileName, boolean firstColumnIsHeader) {
+    public CsvReader(String fileName) {
         this.fileName = fileName;
-        this.firstColumnIsHeader = firstColumnIsHeader;
+        this.firstColumnIsHeader = false;
         
         header = new HashMap<String, Integer>();
         data = new int[1][];
@@ -36,21 +37,34 @@ extends DataReader {
         dataLoaded = false;
     }
     
+    public void FirstColumnIsHeader() {
+        firstColumnIsHeader = true;
+    }
+    
+    public void NoHeader() {
+        noHeader = true;
+    }
+    
     public boolean ReadData() {
         if(FileExists()) {
+            dataLoaded = false;
             ArrayList<String> content = ReadFileContent();
             CheckDelimiter(content);
             
-            if(firstColumnIsHeader) {
-                ReadWithColumnHeader(content);
-            }else {
-                ReadWithRowHeader(content);
+            if(noHeader){
+                ReadDataNoHeader(content);
+            }else{
+                if(firstColumnIsHeader) {
+                    ReadWithColumnHeader(content);
+                }else {
+                    ReadWithRowHeader(content);
+                }
             }
             
             dataLoaded = true;
-            return true;
+            return dataLoaded;
         }
-        return false;
+        return dataLoaded;
     }
     
     public boolean FileExists() {
@@ -66,7 +80,6 @@ extends DataReader {
         return -1;
     }
 
-    
     public int GetDataSize() {
         return data.length;
     }
@@ -84,7 +97,6 @@ extends DataReader {
             for(String line; (line = br.readLine()) != null; ) {
                 content.add(line);
             }
-        // line is not visible here.
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -100,6 +112,24 @@ extends DataReader {
             }
         }
         delimiter = ",";
+    }
+    
+    private void ReadDataNoHeader(ArrayList<String> content) {
+        data = new int[content.size()][];
+        
+        int row = 0;
+        for (String line : content)
+        {
+            int col = 0;
+            
+            String[] cells = line.split(delimiter);
+            data[row] = new int[cells.length];
+            
+            for(String cell : cells) {
+                data[row][col++] = Integer.parseInt(cell);
+            }
+            row++;
+        }
     }
         
     private void ReadWithColumnHeader(ArrayList<String> content) {

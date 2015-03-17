@@ -9,5 +9,5 @@ public interface ProblemCreator {
     
     Problem CreateProblem();
     
-    boolean CheckForDataCorectness();
+    boolean IsCreatedCorrectly();
 }
