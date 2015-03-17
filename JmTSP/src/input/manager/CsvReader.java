@@ -19,9 +19,8 @@ extends DataReader {
     
     String fileName;
     Map<String, Integer> header;
-    Number[][] data;
+    int[][] data;
     boolean firstColumnIsHeader; 
-    boolean useDoubleParser;
     String delimiter;
     
     boolean dataLoaded;
@@ -30,10 +29,8 @@ extends DataReader {
         this.fileName = fileName;
         this.firstColumnIsHeader = firstColumnIsHeader;
         
-        useDoubleParser = false;
-        
         header = new HashMap<String, Integer>();
-        data = new Number[1][];
+        data = new int[1][];
         
         delimiter = ";";
         dataLoaded = false;
@@ -42,7 +39,6 @@ extends DataReader {
     public boolean ReadData() {
         if(FileExists()) {
             ArrayList<String> content = ReadFileContent();
-            IsAnyDouble(content);
             CheckDelimiter(content);
             
             if(firstColumnIsHeader) {
@@ -64,21 +60,18 @@ extends DataReader {
         return false;
     }
     
-    public Number GetValue(String key, int n) {
+    public int GetValue(String key, int n) {
         if(dataLoaded && header.containsKey(key) && n < data.length )
             return data[n][header.get(key)];
-        return -1.0;
+        return -1;
     }
-    
-    public int GetIntValue(String key, int n){
-        return GetValue(key, n).intValue();
-    }
+
     
     public int GetDataSize() {
         return data.length;
     }
     
-    public Number[][] GetData() {
+    public int[][] GetData() {
         if(dataLoaded)
             return data;
         return null;
@@ -98,16 +91,6 @@ extends DataReader {
         return content;
     }
     
-    private void IsAnyDouble(ArrayList<String> content) {
-        for(String cell : content) {
-            if(cell.contains(".")){
-                useDoubleParser = true;
-                return;
-            }
-        }
-        useDoubleParser = false;
-    }
-    
     private void CheckDelimiter(ArrayList<String> content)
     {
         for(String cell : content) {
@@ -121,7 +104,7 @@ extends DataReader {
         
     private void ReadWithColumnHeader(ArrayList<String> content) {
         
-        data = new Number[content.size()][];
+        data = new int[content.size()][];
         boolean headerLoaded = false;
         
         int row = 0;
@@ -129,16 +112,14 @@ extends DataReader {
         for (String line : content)
         {
             String[] cells = line.split(delimiter);
-            data[row] = new Number[cells.length - 1];
+            data[row] = new int[cells.length - 1];
             headerLoaded = false;
             
             int col = 0;
             for(String cell : cells) {
                 
                 if(headerLoaded) {
-                    data[row][col++] = useDoubleParser ?
-                                       Double.parseDouble(cell)
-                                     : Integer.parseInt(cell);
+                    data[row][col++] = Integer.parseInt(cell);
                 }else {
                     header.put(cell, row);
                     headerLoaded = true;
@@ -150,7 +131,7 @@ extends DataReader {
     
     private void ReadWithRowHeader(ArrayList<String> content) {
         
-        data = new Number[content.size() - 1][];
+        data = new int[content.size() - 1][];
         boolean headerLoaded = false;
         
         int row = -1;
@@ -161,11 +142,9 @@ extends DataReader {
             
             if(headerLoaded) {
                 row++;
-                data[row] = new Number[header.size()];
+                data[row] = new int[header.size()];
                 for(String cell : line.split(delimiter)) {
-                    data[row][col++] = useDoubleParser ?
-                                       Double.parseDouble(cell)
-                                     : Integer.parseInt(cell);
+                    data[row][col++] = Integer.parseInt(cell);
                     if(col >= header.size())
                         break;
                 }

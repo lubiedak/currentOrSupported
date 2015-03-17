@@ -5,19 +5,17 @@ import java.util.ArrayList;
  * @author lbiedak
  */
 public class Problem {
-    
-    Point depot;
+
     public int size;
-    ArrayList<Point> points;
+    Point[] points; //first point is depot
     Number[][] distances;
     ProblemRestrictions restrictions;
     
     
     public Problem()
     {
-        depot = new Point();
         size = 0;
-        points = new ArrayList<Point>();
+        points = new Point[1];
         distances = new Number[1][];
         restrictions = new ProblemRestrictions();
         
@@ -36,5 +34,9 @@ public class Problem {
     public int GetMaxCycleSize()
     {
         return restrictions.maxCycleSize;
+    }
+    
+    public Point[] GetPoints() {
+        return points;
     }
 }

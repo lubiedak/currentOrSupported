@@ -14,19 +14,19 @@ public class CsvReaderTest {
     public void testColumnHeaderReading()
     {
         reader = new CsvReader("test/testFiles/simpleRowInt.csv", false);
-        assertEquals("Before ReadData() there is no results", -1.0, reader.GetValue("x", 0));
+        assertEquals("Before ReadData() there is no results", -1, reader.GetValue("x", 0));
         
         reader.ReadData();
         
-        assertEquals("Should be 4.0", 4.0, reader.GetValue("x", 1));
+        assertEquals("Should be 4", 4, reader.GetValue("x", 1));
         
-        assertEquals("Should be null", -1.0, reader.GetValue("x", 2));
+        assertEquals("Should be null", -1, reader.GetValue("x", 2));
         
         reader = new CsvReader("test/testFiles/simpleRestrictions.csv", true);
         reader.ReadData();
         
-        assertEquals("Should be null", -1.0, reader.GetValue("niMa", 0));
+        assertEquals("Should be null", -1, reader.GetValue("niMa", 0));
         
-        assertEquals("Should be 1", 1000, reader.GetIntValue("CycleCargo", 0));
+        assertEquals("Should be 1", 1000, reader.GetValue("CycleCargo", 0));
     }
 }

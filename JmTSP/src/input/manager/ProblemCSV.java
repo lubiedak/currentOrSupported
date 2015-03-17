@@ -3,6 +3,8 @@ package input.manager;
 import jmtsp.Problem;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import jmtsp.Point;
 import jmtsp.ProblemRestrictions;
 
 /**
@@ -16,21 +18,26 @@ implements ProblemCreator {
     String distanceFileName;
     
     Problem problem;
+    int[][] distances;
     
-    public ProblemCSV(String problemFileName, String restrictionsFileName, String distanceFileName)
-    {
+    
+    public ProblemCSV(String problemFileName, String restrictionsFileName, String distanceFileName) {
         this.problemFileName      = problemFileName;
         this.restrictionsFileName = restrictionsFileName;
         this.distanceFileName     = distanceFileName;
         problem = new Problem();
+        distances = new int[1][];
     }
     
-    public Problem CreateProblem()
-    {
+    public Problem CreateProblem() {
         ProblemRestrictions restrictions = GetProblemRestrictions();
         
         
         return new Problem();
+    }
+    
+    public boolean CheckForDataCorectness() {
+        return true;
     }
     
     private Problem GetProblem() {
@@ -39,8 +46,7 @@ implements ProblemCreator {
         return new Problem();
     }
     
-    private Number[][] GetDistance(Problem problem) {
-        Number[][] distances = new Number[1][];
+    private int[][] GetDistance(Problem problem) {
         CsvReader distanceReader = new CsvReader(distanceFileName, false);
         
         if(distanceReader.FileExists()) {
@@ -53,31 +59,34 @@ implements ProblemCreator {
         return distances;
     }
     
-    private ProblemRestrictions GetProblemRestrictions()
-    {
+    private ProblemRestrictions GetProblemRestrictions() {
         ProblemRestrictions restrictions = new ProblemRestrictions();
         
         CsvReader restReader = new CsvReader(restrictionsFileName, false);
-        if (restReader.FileExists())
-        {
+        if (restReader.FileExists()) {
             restReader.ReadData();
             
-            restrictions.maxCycleCargo = restReader.GetIntValue("CycleCargo", 0);
-            restrictions.minCycleCargo = restReader.GetIntValue("CycleCargo", 1);
-            restrictions.maxCycleSize = restReader.GetIntValue("CycleSize", 0);
-            restrictions.minCycleSize = restReader.GetIntValue("CycleCargo", 1);
-            restrictions.maxCycleLength = restReader.GetIntValue("CycleLength", 0);
-            restrictions.maxCycleLength = restReader.GetIntValue("CycleLength", 1);
+            restrictions.maxCycleCargo = restReader.GetValue("CycleCargo", 0);
+            restrictions.minCycleCargo = restReader.GetValue("CycleCargo", 1);
+            restrictions.maxCycleSize = restReader.GetValue("CycleSize", 0);
+            restrictions.minCycleSize = restReader.GetValue("CycleCargo", 1);
+            restrictions.maxCycleLength = restReader.GetValue("CycleLength", 0);
+            restrictions.maxCycleLength = restReader.GetValue("CycleLength", 1);
             
-            restrictions.maxPointCoordinate = restReader.GetIntValue("PointCoordinate", 0);
-            restrictions.maxPointDemand = restReader.GetIntValue("PointDemand", 0);
+            restrictions.maxPointCoordinate = restReader.GetValue("PointCoordinate", 0);
+            restrictions.maxPointDemand = restReader.GetValue("PointDemand", 0);
         }
         return restrictions;
     }
     
-    public boolean CheckForDataCorectness()
-    {
-        return true;
+    private void CountDistances(Problem problem){
+        Point[] points = problem.GetPoints();
+        for(int i = 0; i < points.length; ++i){
+            for(int j = 0; j < points.length; ++j){
+                distances[i][j] = (int)Math.sqrt
+                                 (Math.pow(points[i].GetX() - points[j].GetX(), 2.0) +
+                                  Math.pow(points[i].GetY() - points[j].GetY(), 2.0));
+            }
+        }
     }
-    
 }
