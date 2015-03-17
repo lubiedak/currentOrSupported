@@ -29,7 +29,7 @@ implements Solver{
      */
     public boolean LoadProblem(Problem problem)
     {
-        if(problem.size <= MaxProblemSize(problem))
+        if(problem.size() <= MaxProblemSize(problem))
         {
             this.problem = problem;
             

@@ -28,7 +28,8 @@ extends DataReader {
     
     public CsvReader(String fileName) {
         this.fileName = fileName;
-        this.firstColumnIsHeader = false;
+        firstColumnIsHeader = false;
+        noHeader = false;
         
         header = new HashMap<String, Integer>();
         data = new int[1][];
@@ -134,28 +135,33 @@ extends DataReader {
         
     private void ReadWithColumnHeader(ArrayList<String> content) {
         
-        data = new int[content.size()][];
+        String tempLine = content.get(0);
+        data = new int[tempLine.split(delimiter).length-1][];
+        for(int row = 0; row < data.length; row++){
+            data[row] = new int[content.size()];
+        }
+        
         boolean headerLoaded = false;
         
-        int row = 0;
+        int col = 0;
         
         for (String line : content)
         {
             String[] cells = line.split(delimiter);
-            data[row] = new int[cells.length - 1];
             headerLoaded = false;
             
-            int col = 0;
+            int row = 0;
             for(String cell : cells) {
                 
                 if(headerLoaded) {
-                    data[row][col++] = Integer.parseInt(cell);
+                    data[row++][col] = Integer.parseInt(cell);
                 }else {
-                    header.put(cell, row);
+                    header.put(cell, col);
                     headerLoaded = true;
+                    
                 }
             }
-            row++;
+            col++;
         }
     }
     

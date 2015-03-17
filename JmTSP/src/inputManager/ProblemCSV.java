@@ -96,7 +96,7 @@ implements ProblemCreator {
             restrictions.maxCycleCargo  = restReader.GetValue("CycleCargo", 0);
             restrictions.minCycleCargo  = restReader.GetValue("CycleCargo", 1);
             restrictions.maxCycleSize   = restReader.GetValue("CycleSize", 0);
-            restrictions.minCycleSize   = restReader.GetValue("CycleCargo", 1);
+            restrictions.minCycleSize   = restReader.GetValue("CycleSize", 1);
             restrictions.maxCycleLength = restReader.GetValue("CycleLength", 0);
             restrictions.maxCycleLength = restReader.GetValue("CycleLength", 1);
             

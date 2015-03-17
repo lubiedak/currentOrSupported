@@ -34,8 +34,8 @@ public class CyclesCreator {
     
     private int CountN()
     {
-        return (int)( Math.pow(2.0, problem.size) - 1 -
-                      Math.pow(2.0, problem.size - maxCycleSize));
+        return (int)( Math.pow(2.0, problem.size()) - 1 -
+                      Math.pow(2.0, problem.size() - maxCycleSize));
     }
     
 }

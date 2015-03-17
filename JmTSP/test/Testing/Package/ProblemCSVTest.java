@@ -21,8 +21,8 @@ public class ProblemCSVTest {
     public void testMaxCycleSize()
     {
        problemCreator = new ProblemCSV( "test/testFiles/simpleProblem.csv",
-                                        "test/testFiles/simpleProblemDistances.csv",
-                                        "test/testFiles/simpleRestrictions.csv");
+                                        "test/testFiles/simpleRestrictions.csv",
+                                        "test/testFiles/simpleProblemDistances.csv");
        
        problem = problemCreator.CreateProblem();
     }

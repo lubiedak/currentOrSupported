@@ -6,7 +6,6 @@ import java.util.ArrayList;
  */
 public class Problem {
 
-    public int size;
     Point[] points; //first point is depot
     int[][] distances;
     ProblemRestrictions restrictions;
@@ -14,7 +13,6 @@ public class Problem {
     
     public Problem()
     {
-        size = 0;
         points = new Point[1];
         distances = new int[1][];
         restrictions = new ProblemRestrictions();
@@ -46,5 +44,9 @@ public class Problem {
     
     public Point[] GetPoints() {
         return points;
+    }
+    
+    public int size(){
+        return points.length;
     }
 }
