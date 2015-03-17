@@ -1,4 +1,4 @@
-package input.manager;
+package inputManager;
 
 import jmtsp.Problem;
 import java.io.FileNotFoundException;

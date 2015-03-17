@@ -1,4 +1,4 @@
-package input.manager;
+package inputManager;
 
 import java.io.BufferedReader;
 import java.io.File;

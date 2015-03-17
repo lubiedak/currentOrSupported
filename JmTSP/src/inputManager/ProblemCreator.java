@@ -1,4 +1,4 @@
-package input.manager;
+package inputManager;
 import jmtsp.ProblemRestrictions;
 import jmtsp.Problem;
 /**

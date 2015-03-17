@@ -1,6 +1,6 @@
 package Testing.Package;
 
-import input.manager.CsvReader;
+import inputManager.CsvReader;
 import org.junit.*;
 import static org.junit.Assert.*;
 /**
