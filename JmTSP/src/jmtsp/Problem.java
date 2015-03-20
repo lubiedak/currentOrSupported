@@ -49,4 +49,14 @@ public class Problem {
     public int size(){
         return points.length;
     }
+    
+    @Override
+    public String toString(){
+        String description = "Problem: definition:\n";
+        description += restrictions.toString();
+        for(Point p : points){
+            description += p.toString() + "\n";
+        }
+        return description;
+    }
 }

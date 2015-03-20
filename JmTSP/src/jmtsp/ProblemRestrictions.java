@@ -46,4 +46,19 @@ public class ProblemRestrictions {
     {
         
     }
+    
+    @Override
+    public String toString(){
+        String description = "Problem restrictions:\n";
+        
+        description += "maxCycleSize:   " + maxCycleSize + "\n";
+        description += "minCycleSize:   " + minCycleSize + "\n";
+        description += "maxCycleLength: " + maxCycleLength + "\n";
+        description += "minCycleLength: " + minCycleLength + "\n";
+        description += "maxCycleCargo:  " + maxCycleCargo + "\n";
+        description += "minCycleCargo:  " + minCycleCargo + "\n";
+        description += "maxPointCoord:  " + maxPointCoordinate + "\n";
+        description += "maxPointDemand: " + maxPointDemand + "\n";
+        return description;
+    }
 }

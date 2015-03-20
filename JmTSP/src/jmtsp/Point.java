@@ -24,4 +24,9 @@ public class Point {
     public int GetY(){
         return y;
     }
+    
+    @Override
+    public String toString(){        
+        return "" + x + "\t" + y + "\t" + demand;
+    }
 }
