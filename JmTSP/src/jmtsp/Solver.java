@@ -12,8 +12,8 @@ public interface Solver {
     int MaxProblemSize(Problem problem);
     
     /**
-     * LoadProblem informs loads problem and inform if solving
- will be possible
+     * LoadProblem informs loads problem and inform if solving 
+     * will be possible
      */
     boolean LoadProblem(Problem problem);
     
