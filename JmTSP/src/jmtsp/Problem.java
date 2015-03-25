@@ -11,16 +11,14 @@ public class Problem {
     ProblemRestrictions restrictions;
     
     
-    public Problem()
-    {
+    public Problem() {
         points = new Point[1];
         distances = new int[1][];
         restrictions = new ProblemRestrictions();
         
     }
     
-    public void SetPoints(int[][] xyd)
-    {
+    public void SetPoints(int[][] xyd) {
         points = new Point[xyd.length];
         int i = 0;
         for(int[] point : xyd){
@@ -28,8 +26,7 @@ public class Problem {
         }
     }
     
-    public void SetRestrictions(ProblemRestrictions restrictions)
-    {
+    public void SetRestrictions(ProblemRestrictions restrictions) {
         this.restrictions = restrictions;
     }
     
@@ -37,13 +34,33 @@ public class Problem {
         distances = dist;
     }
     
-    public int GetMaxCycleSize()
-    {
+    public int GetMaxCycleSize() {
         return restrictions.maxCycleSize;
+    }
+    
+    public ProblemRestrictions GetRestrictions() {
+        return restrictions;
     }
     
     public Point[] GetPoints() {
         return points;
+    }
+    
+    public Point[] GetSelectedPoints(int selectedPoints, int howMany) {
+        Point[] sPoints = new Point[howMany];
+        
+        int p = 0;
+        for (int i = 0; i < size(); ++i) {
+            if( ((int)Math.pow(2,i) & selectedPoints) == 1){
+                sPoints[p] = points[i];
+                p++;
+            }
+        }
+        return sPoints;
+    }
+    
+    public Point GetPoint(int index){
+        return points[index];
     }
     
     public int size(){
@@ -59,4 +76,6 @@ public class Problem {
         }
         return description;
     }
+    
+    
 }

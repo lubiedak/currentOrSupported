@@ -18,8 +18,7 @@ public class ProblemCSVTest {
     private Problem problem;
     
     @Test
-    public void testMaxCycleSize()
-    {
+    public void testMaxCycleSize() {
        problemCreator = new ProblemCSV( "test/testFiles/simpleProblem.csv",
                                         "test/testFiles/simpleRestrictions.csv",
                                         "test/testFiles/simpleProblemDistances.csv");

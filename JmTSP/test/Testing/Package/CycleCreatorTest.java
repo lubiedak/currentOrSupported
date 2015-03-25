@@ -21,8 +21,7 @@ public class CycleCreatorTest {
     private ProblemRestrictions restrictions;
     
     @Test
-    public void testMaxCycleSize()
-    {
+    public void testMaxCycleSize() {
         problem = new Problem();
         creator = new CyclesCreator(problem);
         
@@ -35,6 +34,4 @@ public class CycleCreatorTest {
         
         assertEquals("Absolute max cycle size is 7", MethodLimits.maxCycleSize , creator.GetMaxCycleSize());
     }
-    
-    
 }

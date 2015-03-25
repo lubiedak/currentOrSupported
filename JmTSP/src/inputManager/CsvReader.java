@@ -102,8 +102,7 @@ extends DataReader {
         return content;
     }
     
-    private void CheckDelimiter(ArrayList<String> content)
-    {
+    private void CheckDelimiter(ArrayList<String> content) {
         for(String cell : content) {
             if(cell.contains(";")){
                 delimiter = ";";

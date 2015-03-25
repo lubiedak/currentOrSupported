@@ -11,8 +11,7 @@ public class CsvReaderTest {
     private CsvReader reader;
     
     @Test
-    public void testRowHeaderReading()
-    {
+    public void testRowHeaderReading() {
         reader = new CsvReader("test/testFiles/simpleRowInt.csv");
         assertEquals("Before ReadData() there is no results", -1, reader.GetValue("x", 0));
         reader.ReadData();
@@ -34,7 +33,7 @@ public class CsvReaderTest {
     
     
     @Test
-    public void testNoHeaderReading(){
+    public void testNoHeaderReading() {
         reader = new CsvReader("test/testFiles/simpleProblemDistances.csv");
         reader.NoHeader();
         reader.ReadData();

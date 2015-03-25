@@ -6,8 +6,7 @@ package brute;
  */
 public class PermutationGenerator {
     
-    public PermutationGenerator(int size)
-    {
+    public PermutationGenerator(int size) {
         
     }
 }

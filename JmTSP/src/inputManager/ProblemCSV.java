@@ -35,8 +35,7 @@ implements ProblemCreator {
             problem.SetRestrictions(GetProblemRestrictions());
             problem.SetDistances(GetDistances());
             
-            if(IsCreatedCorrectly())
-            {
+            if(IsCreatedCorrectly()) {
                 return problem;
             }
         }
@@ -109,7 +108,7 @@ implements ProblemCreator {
     
     private void CountDistances(){
         Point[] points = problem.GetPoints();
-        for(int i = 0; i < points.length; ++i){
+        for(int i = 0; i < points.length; ++i) {
             for(int j = 0; j < points.length; ++j){
                 distances[i][j] = (int)Math.sqrt
                                  (Math.pow(points[i].GetX() - points[j].GetX(), 2.0) +

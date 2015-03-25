@@ -25,6 +25,10 @@ public class Point {
         return y;
     }
     
+    public int GetDemand(){
+        return demand;
+    }
+    
     @Override
     public String toString(){        
         return "" + x + "\t" + y + "\t" + demand;

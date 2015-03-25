@@ -18,8 +18,7 @@ public class ProblemRestrictions {
     public int maxPointCoordinate;
     public int maxPointDemand;
     
-    public ProblemRestrictions()
-    {
+    public ProblemRestrictions() {
         maxCycleSize = 5;
         minCycleSize = 1;
         
@@ -33,8 +32,7 @@ public class ProblemRestrictions {
         maxPointDemand = maxCycleCargo;
     }
     
-    public ProblemRestrictions(int maxCS, int maxCL, int maxCC)
-    {
+    public ProblemRestrictions(int maxCS, int maxCL, int maxCC) {
         this();
         maxCycleSize = maxCS;
         maxCycleLength = maxCL;
@@ -42,8 +40,7 @@ public class ProblemRestrictions {
         
     }
     
-    public void SetMaxCycleSize()
-    {
+    public void SetMaxCycleSize() {
         
     }
     

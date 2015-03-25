@@ -6,8 +6,7 @@ import brute.PermutationGenerator;
  * @author lbiedak
  */
 public class Cycle {
-    Point depot;
-    ArrayList<Point> points;
+    Point[] points;
     int length;
     int cargo;
     
@@ -16,8 +15,13 @@ public class Cycle {
         
     }
     
-    public void SelfOptimize(PermutationGenerator permGen)
-    {
+    public void SetPoints(Point[] points){
+        this.points = points;
+    }
+    
+    public void SelfOptimize(PermutationGenerator permGen) {
         
     }
+    
+    
 }
