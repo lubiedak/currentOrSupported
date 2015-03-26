@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Testing.Package;
 
 import inputManager.ProblemCSV;
@@ -19,11 +15,14 @@ public class ProblemCSVTest {
     
     @Test
     public void testMaxCycleSize() {
-       problemCreator = new ProblemCSV( "test/testFiles/simpleProblem.csv",
+        /**
+         * What was the point here?
+         */
+        problemCreator = new ProblemCSV( "test/testFiles/simpleProblem.csv",
                                         "test/testFiles/simpleRestrictions.csv",
                                         "test/testFiles/simpleProblemDistances.csv");
-       
-       problem = problemCreator.CreateProblem();
+        
+        problem = problemCreator.CreateProblem();
     }
     
 }
