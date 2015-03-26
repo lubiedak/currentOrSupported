@@ -46,17 +46,21 @@ public class Problem {
         return points;
     }
     
-    public Point[] GetSelectedPoints(int selectedPoints, int howMany) {
-        Point[] sPoints = new Point[howMany];
+    public Point[] GetSelectedPoints(Integer[] selectedPoints) {
+        Point[] sPoints = new Point[selectedPoints.length];
         
         int p = 0;
-        for (int i = 0; i < size(); ++i) {
-            if( ((int)Math.pow(2,i) & selectedPoints) == 1){
-                sPoints[p] = points[i];
-                p++;
-            }
+        for (int i : selectedPoints) {
+            sPoints[p] = points[i];
+            p++;
         }
         return sPoints;
+    }
+    
+    public int[][] GetDistancesForSelectedPoints(Integer[] selectedPoints){
+        int[][] distances = new int[selectedPoints.length][selectedPoints.length];
+        
+        return distances;
     }
     
     public Point GetPoint(int index){
@@ -76,6 +80,4 @@ public class Problem {
         }
         return description;
     }
-    
-    
 }

@@ -2,6 +2,7 @@ package brute;
 import jmtsp.*;
 import java.util.ArrayList;
 import java.lang.Math;
+import tools.BinArrayCaster;
 
 /**
  *
@@ -37,7 +38,7 @@ public class CyclesCreator {
          */
         for(int binPoints = 1; binPoints < N; binPoints+=2){
             
-            cycleSize = CountSelectedPoints(binPoints);
+            cycleSize = BinArrayCaster.CountSelectedPoints(binPoints);
             
             if(cycleSize < problem.GetMaxCycleSize()){
                 
@@ -46,7 +47,8 @@ public class CyclesCreator {
                 if( cargo > problem.GetRestrictions().minCycleCargo
                 &&  cargo < problem.GetRestrictions().maxCycleCargo ){
                     
-                    cycles.add(CreateCycle(binPoints, cycleSize));
+                    
+                    cycles.add(CreateCycle(binPoints));
                     
                 }
             }
@@ -54,12 +56,15 @@ public class CyclesCreator {
         
         return cycles;
     }
-    
-    private Cycle CreateCycle(int selectedPoints, int cycleSize) {
+        
+    private Cycle CreateCycle(int binPoints) {
         Cycle cycle = new Cycle();
         
-        Point[] points = problem.GetSelectedPoints(selectedPoints, cycleSize);
+        BinArrayCaster baCaster = new BinArrayCaster(binPoints);
+        Integer[] selectedPoints = baCaster.GetArray();
         
+        Point[] points = problem.GetSelectedPoints(selectedPoints);
+        int[][] distances = problem.GetDistancesForSelectedPoints(selectedPoints);
         cycle.SetPoints(points);
         
         cycle.SelfOptimize(permGen);
@@ -73,11 +78,7 @@ public class CyclesCreator {
                       Math.pow(2.0, problem.size() - maxCycleSize));
     }
     
-    private int CountSelectedPoints(int i){
-        i = i - ((i >> 1) & 0x55555555);
-        i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
-        return (((i + (i >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
-    }
+    
     
     private int SumCargo(int selectedPoints) {
         int cargo = 0;
