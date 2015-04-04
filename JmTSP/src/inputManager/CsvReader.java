@@ -43,10 +43,9 @@ extends DataReader {
     public void NoHeader() {
         noHeader = true;
     }
-    
-    public boolean ReadData() {
+    @Override
+    public void ReadData() {
         if(FileExists()) {
-            dataLoaded = false;
             ArrayList<String> content = ReadFileContent();
             CheckDelimiter(content);
             
@@ -59,11 +58,7 @@ extends DataReader {
                     ReadWithRowHeader(content);
                 }
             }
-            
-            dataLoaded = true;
-            return dataLoaded;
         }
-        return dataLoaded;
     }
     
     public boolean FileExists() {

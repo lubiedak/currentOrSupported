@@ -1,4 +1,4 @@
-package jmtsp;
+package BasicTypes;
 
 /**
  * Simple structure with restrictions for possible solutions

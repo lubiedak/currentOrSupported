@@ -1,5 +1,7 @@
 
 package brute;
+import BasicTypes.Solution;
+import BasicTypes.Problem;
 import java.util.ArrayList;
 import jmtsp.*;
 

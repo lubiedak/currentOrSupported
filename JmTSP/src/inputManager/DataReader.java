@@ -10,5 +10,5 @@ package inputManager;
  * @author lbiedak
  */
 public abstract class DataReader {
-    public abstract boolean ReadData();
+    public abstract void ReadData();
 }
