@@ -2,7 +2,7 @@
 package Testing.Package;
 
 import inputManager.ProblemCSV;
-import BasicTypes.Problem;
+import jmtsp.Problem;
 import org.junit.Test;
 
 /**

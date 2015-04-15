@@ -1,6 +1,4 @@
 package brute;
-import BasicTypes.Problem;
-import BasicTypes.Cycle;
 import jmtsp.*;
 import java.util.ArrayList;
 import java.lang.Math;
@@ -12,7 +10,6 @@ import tools.BinArrayCaster;
  */
 public class CyclesCreator {
     Problem problem;
-    BruteTSPSolver tspSolver;
     ArrayList<Cycle> cycles;
     PermutationGenerator permGen;
     
@@ -20,7 +17,6 @@ public class CyclesCreator {
     
     public CyclesCreator(Problem problem) {
         this.problem = problem;
-        tspSolver = new BruteTSPSolver(problem);
         cycles = new ArrayList<Cycle>();
         maxCycleSize = Math.min( MethodLimits.maxCycleSize, problem.GetMaxCycleSize() );
         permGen = new PermutationGenerator( maxCycleSize );
@@ -51,19 +47,33 @@ public class CyclesCreator {
                 if( cargo > problem.GetRestrictions().minCycleCargo
                 &&  cargo < problem.GetRestrictions().maxCycleCargo ){
                     
+                    
                     cycles.add(CreateCycle(binPoints));
+                    
                 }
             }
         }
+        
         return cycles;
     }
         
     private Cycle CreateCycle(int binPoints) {
+        Cycle cycle = new Cycle();
+        
         BinArrayCaster baCaster = new BinArrayCaster(binPoints);
-        return tspSolver.CreateCycle(baCaster.GetArray());
+        Integer[] selectedPoints = baCaster.GetArray();
+        
+        Point[] points = problem.GetSelectedPoints(selectedPoints);
+        int[][] distances = problem.GetDistancesForSelectedPoints(selectedPoints);
+        cycle.SetPoints(points);
+        
+        cycle.SelfOptimize(permGen);
+        
+        return cycle;
     }
     
-    private int CountN() {
+    private int CountN()
+    {
         return (int)( Math.pow(2.0, problem.size()) - 1 -
                       Math.pow(2.0, problem.size() - maxCycleSize));
     }

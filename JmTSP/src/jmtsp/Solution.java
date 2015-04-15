@@ -1,5 +1,4 @@
-package BasicTypes;
-import BasicTypes.Cycle;
+package jmtsp;
 import java.util.ArrayList;
 /**
  *

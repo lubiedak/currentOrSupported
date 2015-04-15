@@ -1,32 +1,28 @@
-package BasicTypes;
+package jmtsp;
 import java.util.ArrayList;
 /**
  *
  * @author lbiedak
  */
-
 public class Problem {
-    Point depot;
-    Point[] points;
+
+    Point[] points; //first point is depot
     int[][] distances;
     ProblemRestrictions restrictions;
     
     
     public Problem() {
-        depot = new Point();
         points = new Point[1];
         distances = new int[1][];
         restrictions = new ProblemRestrictions();
+        
     }
     
     public void SetPoints(int[][] xyd) {
         points = new Point[xyd.length];
         int i = 0;
         for(int[] point : xyd){
-            if(i==0)
-                depot = new Point(i++, point);
-            else
-                points[i-1] = new Point(i++, point);
+            points[i++] = new Point(point[0], point[1], point[2]);
         }
     }
     
@@ -61,6 +57,12 @@ public class Problem {
         return sPoints;
     }
     
+    public int[][] GetDistancesForSelectedPoints(Integer[] selectedPoints){
+        int[][] distances = new int[selectedPoints.length][selectedPoints.length];
+        
+        return distances;
+    }
+    
     public Point GetPoint(int index){
         return points[index];
     }
@@ -73,14 +75,9 @@ public class Problem {
     public String toString(){
         String description = "Problem: definition:\n";
         description += restrictions.toString();
-        description += "Depot: " + depot + "\n";
         for(Point p : points){
-            description += p + "\n";
+            description += p.toString() + "\n";
         }
         return description;
     }
 }
-
-
-
-

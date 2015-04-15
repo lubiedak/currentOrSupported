@@ -1,6 +1,4 @@
 package jmtsp;
-import BasicTypes.Solution;
-import BasicTypes.Problem;
 import java.util.ArrayList;
 
 /**

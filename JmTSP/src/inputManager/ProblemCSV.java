@@ -1,11 +1,11 @@
 package inputManager;
 
-import BasicTypes.Problem;
+import jmtsp.Problem;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import BasicTypes.Point;
-import BasicTypes.ProblemRestrictions;
+import jmtsp.Point;
+import jmtsp.ProblemRestrictions;
 
 /**
  *

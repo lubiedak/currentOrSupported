@@ -1,8 +1,6 @@
 
 package brute;
 
-import BasicTypes.Problem;
-import BasicTypes.Cycle;
 import jmtsp.*;
 
 /**
@@ -11,22 +9,8 @@ import jmtsp.*;
  */
 public class BruteTSPSolver {
     Problem problem;
+    Cycle cycle;
     PermutationGenerator permGen;
     
-    public BruteTSPSolver(Problem problem){
-        this.problem = problem;
-        permGen = new PermutationGenerator(problem.GetMaxCycleSize());
-    }
     
-    public Cycle CreateCycle(Integer[] selectedPoints){
-        
-        return new Cycle();
-    }
-    
-    private void FindShortestPerm(){
-        int length = 0;
-        
-        
-        
-    }
 }

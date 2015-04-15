@@ -1,7 +1,5 @@
 package jmtsp;
 
-import BasicTypes.Point;
-
 /**
  *
  * @author lbiedak

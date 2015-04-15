@@ -1,6 +1,5 @@
 package jmtsp;
 
-import BasicTypes.Problem;
 import inputManager.ProblemCSV;
 
 /**
