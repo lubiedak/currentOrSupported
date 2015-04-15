@@ -1,6 +1,7 @@
 
 package brute;
 
+import BasicTypes.*;
 import jmtsp.*;
 
 /**

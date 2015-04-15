@@ -1,4 +1,5 @@
 package brute;
+import BasicTypes.*;
 import jmtsp.*;
 import java.util.ArrayList;
 import java.lang.Math;

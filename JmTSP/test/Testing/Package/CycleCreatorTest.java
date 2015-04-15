@@ -2,8 +2,7 @@
 package Testing.Package;
 import brute.CyclesCreator;
 import brute.MethodLimits;
-import jmtsp.Problem;
-import jmtsp.ProblemRestrictions;
+import BasicTypes.*;
 import org.junit.*;
 import static org.junit.Assert.*;
 /**

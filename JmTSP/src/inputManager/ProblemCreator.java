@@ -1,6 +1,5 @@
 package inputManager;
-import jmtsp.ProblemRestrictions;
-import jmtsp.Problem;
+import BasicTypes.*;
 /**
  *
  * @author lbiedak

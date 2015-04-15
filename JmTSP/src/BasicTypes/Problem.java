@@ -1,4 +1,4 @@
-package jmtsp;
+package BasicTypes;
 import java.util.ArrayList;
 /**
  *

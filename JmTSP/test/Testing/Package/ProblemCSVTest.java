@@ -1,8 +1,9 @@
 
 package Testing.Package;
 
+import BasicTypes.Problem;
 import inputManager.ProblemCSV;
-import jmtsp.Problem;
+
 import org.junit.Test;
 
 /**
