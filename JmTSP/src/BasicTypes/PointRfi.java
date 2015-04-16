@@ -25,7 +25,7 @@ public class PointRfi {
         double x = (double)point.GetX() - (double)middle.GetX();
         double y = (double)point.GetY() - (double)middle.GetY();
         
-        r = (int)Math.sqrt(x*x + y*y);
+        r = (int)Math.round(Math.sqrt(x*x + y*y));
         
         double pi180 = 180 / Math.PI;
         
