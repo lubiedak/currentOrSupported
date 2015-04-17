@@ -1,6 +1,7 @@
 package brute;
 
 import BasicTypes.Point;
+import BasicTypes.Problem;
 import java.util.ArrayList;
 
 /**
@@ -9,23 +10,13 @@ import java.util.ArrayList;
  */
 public class GeometricDivider {
     
-    Point[] points;
+    Problem mainProblem;
     int n;
     Point middle;
     
-    public GeometricDivider(Point[] points, int n){
-        middle = points[0];
+    public GeometricDivider(Problem problem, int n){
+        mainProblem = problem;
         this.n = n;
-        this.points = new Point[points.length - 1];
-        for(int i = 1; i < points.length; ++i){
-            this.points[i-1] = points[i];
-        }
-    }
-    
-    public GeometricDivider(Point[] points, int n, Point middle){
-        this.points = points;
-        this.n = n;
-        this.middle = middle;
     }
     
     public ArrayList<Point[]> Divide(int sensitivity){

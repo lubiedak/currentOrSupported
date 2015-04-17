@@ -11,6 +11,7 @@ import tools.BinArrayCaster;
  */
 public class CyclesCreator {
     Problem problem;
+    BruteTSPSolver tspSolver;
     ArrayList<Cycle> cycles;
     PermutationGenerator permGen;
     
@@ -18,6 +19,7 @@ public class CyclesCreator {
     
     public CyclesCreator(Problem problem) {
         this.problem = problem;
+        tspSolver = new BruteTSPSolver(problem);
         cycles = new ArrayList<Cycle>();
         maxCycleSize = Math.min( MethodLimits.maxCycleSize, problem.GetMaxCycleSize() );
         permGen = new PermutationGenerator( maxCycleSize );
@@ -37,20 +39,17 @@ public class CyclesCreator {
          * We start from 1, because we always want
          * to have first point(depot) in cycle
          */
-        for(int binPoints = 1; binPoints < N; binPoints+=2){
+        for(int binPoints = 1; binPoints < N; ++binPoints){
             
             cycleSize = BinArrayCaster.CountSelectedPoints(binPoints);
             
             if(cycleSize < problem.GetMaxCycleSize()){
-                
                 cargo = SumCargo(binPoints);
                 
                 if( cargo > problem.GetRestrictions().minCycleCargo
                 &&  cargo < problem.GetRestrictions().maxCycleCargo ){
                     
-                    
                     cycles.add(CreateCycle(binPoints));
-                    
                 }
             }
         }
@@ -58,23 +57,13 @@ public class CyclesCreator {
         return cycles;
     }
         
-    private Cycle CreateCycle(int binPoints) {
-        Cycle cycle = new Cycle();
-        
+    private Cycle CreateCycle(int binPoints) {        
         BinArrayCaster baCaster = new BinArrayCaster(binPoints);
-        Integer[] selectedPoints = baCaster.GetArray();
         
-        Point[] points = problem.GetSelectedPoints(selectedPoints);
-        int[][] distances = problem.GetDistancesForSelectedPoints(selectedPoints);
-        cycle.SetPoints(points);
-        
-        cycle.SelfOptimize(permGen);
-        
-        return cycle;
+        return tspSolver.CreateCycle(baCaster.GetArray());
     }
     
-    private int CountN()
-    {
+    private int CountN() {
         return (int)( Math.pow(2.0, problem.size()) - 1 -
                       Math.pow(2.0, problem.size() - maxCycleSize));
     }

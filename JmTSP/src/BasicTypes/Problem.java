@@ -5,24 +5,25 @@ import java.util.ArrayList;
  * @author lbiedak
  */
 public class Problem {
-
+    Point depot;
     Point[] points; //first point is depot
     int[][] distances;
     ProblemRestrictions restrictions;
     
     
     public Problem() {
+        depot = new Point();
         points = new Point[1];
         distances = new int[1][];
         restrictions = new ProblemRestrictions();
-        
     }
     
     public void SetPoints(int[][] xyd) {
         points = new Point[xyd.length];
         int i = 0;
+        depot = new Point(0, xyd[0]);
         for(int[] point : xyd){
-            points[i++] = new Point(point[0], point[1], point[2]);
+            points[i++] = new Point(i, point);
         }
     }
     
@@ -59,7 +60,7 @@ public class Problem {
     
     public int[][] GetDistancesForSelectedPoints(Integer[] selectedPoints){
         int[][] distances = new int[selectedPoints.length][selectedPoints.length];
-        
+        //TODO
         return distances;
     }
     
