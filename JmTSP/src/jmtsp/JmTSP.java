@@ -20,6 +20,7 @@ public class JmTSP {
         * Problem = ProblemCreator.CreateProblem()
         * ProblemCreator bylby uniwersalna klasa[fabryka?], ktora w zaleznosci
         * od parametru o rodzaju inputu {json, csv} konstruuje problem
+        * DON'T GIVE UP
         */
         
         ProblemCSV problemCreator = new ProblemCSV(args[0], args[1], args[2]);
