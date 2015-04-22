@@ -26,6 +26,10 @@ public class Problem {
             points[i++] = new Point(i, point);
         }
     }
+
+    public void SetPoints(Point[] points, Point middle){
+        
+    }
     
     public void SetRestrictions(ProblemRestrictions restrictions) {
         this.restrictions = restrictions;
@@ -66,6 +70,10 @@ public class Problem {
     
     public Point GetPoint(int index){
         return points[index];
+    }
+    
+    public Point GetDepot(){
+        return points[0];
     }
     
     public int size(){
